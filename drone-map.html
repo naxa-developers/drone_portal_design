@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- SOCIAL MEDIA META -->
+    <meta property="og:description" content="Drone Registry Nepal" />
+    <meta property="og:image" content="preview.html" />
+    <meta property="og:site_name" content="Drone Registry Nepal" />
+    <meta property="og:title" content="Drone Registry Nepal" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://naxa.com.np" />
+
+    <!-- TWITTER META -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Drone Registry Nepal" />
+    <meta name="twitter:creator" content="@Drone Registry Nepal" />
+    <meta name="twitter:title" content="Drone Registry Nepal" />
+    <meta name="twitter:description" content="Drone Registry Nepal" />
+    <meta name="twitter:image" content="preview.html" />
+
+    <!--title-->
+    <title>Drone Registry Nepal</title>
+
+    <!-- faveicon start   -->
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32" />
+
+    <!-- stylesheet start -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/font-humanitarian.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/humanitarian-webfont.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="datatable/datatables.min.css"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+
+  <body class="">
+    <div class="body-container">
+      <div class="drone-admin-wrapper">
+        <header class="site-header map-header map-pd">
+          <div class="container-fluid">
+            <div class="header-in">
+              <a href="home.html" class="logo">
+                <img src="./img/logo.svg" />
+              </a>
+              <div class="menu-wrap">
+                <div class="menu">
+                  <ul>
+                    <li>
+                      <a href="home.html" class="span-15">Home</a>
+                    </li>
+                    <li>
+                      <a href="about.html" class="span-15">No-Fly Zone</a>
+                    </li>
+                    <li>
+                      <a href="#/" class="span-15 call-to-action"
+                        >UAV Guidelines</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="custom-dropdown profile-dropdown is-right">
+                  <a href="#/" class="dropdown-link">
+                    <img src="./img/profile_pic.png" alt="user-profile-pic" />
+                  </a>
+                  <ul class="custom-dropdown-menu no-arrow">
+                    <li>
+                      <a href="#/"
+                        ><i class="material-icons">account_circle</i>Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#/"
+                        ><i class="material-icons">settings</i>Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a href="login.html"
+                        ><i class="material-icons" style="color: #ed3646"
+                          >exit_to_app</i
+                        >Sign out</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="toggle-button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </header>
+        <section class="map-section">
+          <div class="search-bar">
+            <div class="search-wrap no-border">
+              <span><i class="material-icons">place</i></span>
+              <input class="form-control" placeholder="latitude" />
+            </div>
+            <div class="search-wrap no-border">
+              <span><i class="material-icons">place</i></span>
+              <input class="form-control" placeholder="longitude" />
+            </div>
+          </div>
+          <div class="zoom-buttons is-vr">
+            <button class="square-icon zoom-in">
+              <i class="material-icons">add</i>
+            </button>
+            <button class="square-icon zoom-out">
+              <i class="material-icons">remove</i>
+            </button>
+          </div>
+          <div id="map-content"></div>
+          <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0637245432217!2d85.32483371548216!3d27.715318681747714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190e4e3dfaeb%3A0xcbadb01fa8d00b71!2sNaxal%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1606727970060!5m2!1sen!2snp" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
+        </section>
+      </div>
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="js/map.js"></script>
+    <script src="datatable/datatables.min.js"></script>
+    <script src="js/custom-datatable.js"></script>
+    <script src="js/drone.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+
+    <script>
+      // TO MAKE THE MAP APPEAR YOU MUST
+      // ADD YOUR ACCESS TOKEN FROM
+      // https://account.mapbox.com
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoiZ2VvbWF0dXBlbiIsImEiOiJja2E5bDFwb2swdHNyMnNvenZxa2Vpeml2In0.fCStqdwmFYFP-cUvb5vMCw";
+      var map = new mapboxgl.Map({
+        container: "map-content", // container id
+        style: "mapbox://styles/mapbox/light-v10", // style URL
+        center: [83.989834, 28.219089], // starting position [lng, lat]
+        zoom: 12, // starting zoom
+      });
+    </script>
+  </body>
+</html>
